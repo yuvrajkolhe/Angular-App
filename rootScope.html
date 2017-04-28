@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.min.js"></script>
+</head>
+<body ng-app="myAPP">
+    {{myName}}
+    <div ng-controller="myCtrl">
+        <input type="text" ng-model="myName" />
+           {{myName}}
+    </div>
+    <div ng-bind="myName"></div>
+    <div ng-controller="yourctrl">
+        {{myName}}
+    </div>
+</body>
+<script>
+
+    var app = angular.module("myAPP", []);
+    app.controller("myCtrl", function ($scope)
+    {
+        $scope.myName = "ABC";
+    });
+
+    app.controller("yourctrl", function ($scope)
+    {
+        $scope.myName = "xyz";
+        app.run(function ($rootscope)
+        {
+            $rootscope.myName = "PQR";
+        });
+    });
+</script>
+</html>

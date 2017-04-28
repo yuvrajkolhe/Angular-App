@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myctrl">
+        <input type="text" ng-model="name" />
+        {{name}} <br />
+        sum : {{1 + 2}}
+    </div>
+    <script>
+        
+        var myApp = angular.module('myApp', []);
+        myApp.controller('myctrl', ['$scope', function ($scope)
+        {
+            debugger;
+            $scope.timeOfDay = 'Morning';
+            $scope.name = 'Nikki';
+        }]);
+    </script>
+</body>
+    
+</html>
